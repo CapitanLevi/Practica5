@@ -2,24 +2,25 @@
 
 Cuerpo::Cuerpo()
 {
-    cout<<"Creando cuerpo por defecto"<<endl;
     masa = 0;
     ax = ay = 0;
     vx = vy = 0;
     px = py = 0;
 }
 
-Cuerpo::Cuerpo(float _masa, float _ax, float _ay, float _vx, float _vy, float _px, float _py)
-{
-    cout<<"Creando cuerpo personalizado"<<endl;
-    masa = _masa;
-    ax = _ax;
-    ay = _ay;
-    vx = _vx;
-    vy = _vy;
-    px = _px;
-    py = _py;
-}
+//Cuerpo::Cuerpo(float _masa, float _ax, float _ay, float _vx, float _vy, float _px, float _py)
+//{
+//    cout<<"Creando cuerpo personalizado"<<endl;
+//    masa = _masa;
+//    ax = _ax;
+//    ay = _ay;
+//    vx = _vx;
+//    vy = _vy;
+//    px = _px;
+//    py = _py;
+//}
+
+// Getters
 float Cuerpo::getMasa() const
 {
     return masa;
@@ -49,6 +50,7 @@ float Cuerpo::getPy() const
     return py;
 }
 
+// Setters
 void Cuerpo::setMasa(float value)
 {
     masa = value;
@@ -78,20 +80,19 @@ void Cuerpo::setPy(float value)
     py = value;
 }
 
-
+// Métodos
 void Cuerpo::imprimir(void){
+    // Imprime las coordenadas X e Y
     cout<<px<<"\t"<<py<<endl;
 }
 
 void Cuerpo::actualizar()
 {
+    // Actualiza la velocidad y la posición del cuerpo para el siguiente punto
    // calcularAcc(DT);
     calcularVel(DT);
     calcularPos(DT);
 }
-
-
-
 
 void Cuerpo::calcularVel(float dt){
     vx = vx + ax*dt;

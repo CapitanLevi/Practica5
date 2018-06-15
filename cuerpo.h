@@ -4,7 +4,7 @@
 #include <iostream>
 #include <math.h>
 
-#define DT 1 //es 0.001
+#define DT 1 //es 0.001. Es la diferencia temporal dt entre un punto y otro
 
 using namespace std;
 class Cuerpo
@@ -18,7 +18,8 @@ private:
 
 public:
     Cuerpo();
-    Cuerpo(float _masa, float _ax, float _ay, float _vx, float _vy, float _px, float _py);
+//    Cuerpo(float _masa, float _ax, float _ay, float _vx, float _vy, float _px, float _py);
+    // Getters
     float getMasa() const;
     float getAx() const;
     float getAy() const;
@@ -26,7 +27,7 @@ public:
     float getVy() const;
     float getPx() const;
     float getPy() const;
-
+    // Setters
     void setMasa(float value);
     void setAx(float value);
     void setAy(float value);
@@ -34,12 +35,11 @@ public:
     void setVy(float value);
     void setPx(float value);
     void setPy(float value);
-
+    // Métodos
     void actualizar(void);
    // void calcularAcc(float dt);
     void calcularVel(float dt);
     void calcularPos(float dt);
-
     void imprimir(void);
 
 };
